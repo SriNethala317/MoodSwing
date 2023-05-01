@@ -28,7 +28,8 @@ class Song:
         return self.song_info['extension']
     
     def get_image(self):
-        return self.song_info['image_url']
+        print(self.song_info['image_url'])
+        # return self.song_info['image_url']
     
     def get_filename(self):
         return self.song_info['filename']

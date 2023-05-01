@@ -56,11 +56,10 @@ def loginProcess():
 def send_song(path):
     return send_from_directory('../song_downloads/', path)
 
-@app.route('/musicPlayer')
+@app.route('/music-player')
 def musicPlayer():
-    return render_template("music-player.html")
-
-@app.route('/')
+    
+    return render_template('music-player.html')
 
 
 
