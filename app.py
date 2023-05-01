@@ -34,12 +34,12 @@ def registrationProcess():
     username = request.get_json()['usern']
     password = request.get_json()['pass']
     users.insert_one({"username":username, "password":password})
-    return json.dumps('login')
+    return json.dumps('mylogin')
     
 
 @app.route("/login", methods=['GET','POST'])
 def login():
-    return render_template("login.html")
+    return render_template("mylogin.html")
 
 @app.route("/loginProcess", methods=['GET','POST'])
 def loginProcess():
