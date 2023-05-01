@@ -50,6 +50,12 @@ def loginProcess():
         return json.dumps(url_for('home'))
     else:
         return json.dumps(url_for('signup'))
+    
+@app.route('/song_downloads/<path:path>')
+def send_song(path):
+    return send_from_directory('../song_downloads/', path)
+
+
 
     
 

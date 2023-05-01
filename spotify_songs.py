@@ -1,12 +1,11 @@
-# from dotenv import find_dotenv, load_dotenv
-# from os import environ as env
-# import base64
-# from requests import post, get
-# import json
-# import random
-# from song import *
-# from download_song import *
-
+from dotenv import find_dotenv, load_dotenv
+from os import environ as env
+import base64
+from requests import post, get
+import json
+import random
+from song import *
+from download_song import *
 
 # ERR_PLAYLIST_MSG = "Error loading Playlist"
 

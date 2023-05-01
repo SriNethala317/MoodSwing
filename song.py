@@ -5,12 +5,15 @@ from typing import Any
 class Song:
     def __init__(self, name, artist="test", image_url="test", extension="test") -> None:
         self.song_info ={"name" : name.replace(" ", "_"), "artist": artist.replace(" ", "_"), "image_url": image_url, "filename": name.replace(" ", "_") + "." + extension, "extension": extension, "played" : False, "length": 0}
-    
+
     def __str__(self) -> str:
         return str(self.song_info)
     
     def __repr__(self) -> str:
         return str(self.song_info)
+    
+    def get_song_info(self):
+        return self.song_info
     
     def get_name(self):
         return self.song_info['name']
