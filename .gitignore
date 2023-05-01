@@ -5,3 +5,5 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+song_downloads/
+__pycache__/
