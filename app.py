@@ -34,8 +34,9 @@ def registrationProcess():
     username = request.get_json()['usern']
     password = request.get_json()['pass']
     users.insert_one({"username":username, "password":password})
-    return json.dumps('login')
+    return json.dumps('/login')
     
+
 
 @app.route("/login")
 def login():
@@ -47,13 +48,19 @@ def loginProcess():
     password = request.get_json()['pass']
     existing_details = users.find_one({"username": username, "password": password})
     if existing_details:
-        return json.dumps(url_for('home'))
+        return json.dumps('/musicPlayer')
     else:
-        return json.dumps(url_for('signup'))
+        return json.dumps('/signup')
     
 @app.route('/song_downloads/<path:path>')
 def send_song(path):
     return send_from_directory('../song_downloads/', path)
+
+@app.route('/musicPlayer')
+def musicPlayer():
+    return render_template("music-player.html")
+
+@app.route('/')
 
 
 
