@@ -23,23 +23,23 @@ users = db['Users']
 
 @app.route("/")
 def home():
-   return render_template("home.html")
+   return render_template("index.html")
 
-@app.route("/registration", methods=['GET','POST'])
-def registration():
-    return render_template("registration.html")
+@app.route("/signup")
+def signup():
+    return render_template("signup.html")
 
 @app.route("/registrationProcess", methods=['GET','POST'])
 def registrationProcess():
     username = request.get_json()['usern']
     password = request.get_json()['pass']
     users.insert_one({"username":username, "password":password})
-    return json.dumps('mylogin')
+    return json.dumps('login')
     
 
-@app.route("/login", methods=['GET','POST'])
+@app.route("/login")
 def login():
-    return render_template("mylogin.html")
+    return render_template("login.html")
 
 @app.route("/loginProcess", methods=['GET','POST'])
 def loginProcess():
@@ -49,7 +49,7 @@ def loginProcess():
     if existing_details:
         return json.dumps(url_for('home'))
     else:
-        return json.dumps(url_for('register'))
+        return json.dumps(url_for('signup'))
 
     
 
