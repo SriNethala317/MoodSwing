@@ -4,10 +4,6 @@ from pymongo import MongoClient
 from flask_pymongo import PyMongo
 from os import environ as env
 from dotenv import find_dotenv, load_dotenv
-from flask_login import UserMixin
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, Length, ValidationError
 import json
 
 
