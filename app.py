@@ -1,16 +1,13 @@
 
-from flask import Flask, redirect, render_template, session, url_for, request, send_from_directory, jsonify, url_for
+from flask import Flask, redirect, render_template, session, url_for, request, send_from_directory, jsonify
 from pymongo import MongoClient
 from flask_pymongo import PyMongo
 from os import environ as env
 from dotenv import find_dotenv, load_dotenv
-from flask_login import UserMixin
-from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
-from wtforms.validators import InputRequired, Length, ValidationError
 import json
 
 
+from spotify_songs import * 
 
 ENV_FILE = find_dotenv()
 
@@ -18,7 +15,7 @@ if ENV_FILE:
     load_dotenv(ENV_FILE)
 
 app = Flask(__name__)
-app.config['SECRET_KEY']="secret"
+app.secret_key = env.get("APP_SECRET_KEY")
 cluster = env.get("MONGODB_CLUSTER")
 client = MongoClient(cluster)
 db = client['MoodSwing']
