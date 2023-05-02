@@ -7,8 +7,8 @@ loginSubmit.addEventListener("click", login)
 function login() {
 
   let data = new FormData();
-  data.usern = String(username.value)
-  data.pass = String(password.value)
+  data.usern = String(username.value);
+  data.pass = String(password.value);
   fetch("/loginProcess", {
 
     method: "POST",
@@ -19,7 +19,6 @@ function login() {
 
   })
     .then(response => response.json()).then(data => location.href = data)
-
 }
 
 

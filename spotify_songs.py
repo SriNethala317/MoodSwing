@@ -73,10 +73,11 @@ def choose_mood(arr):
 def random_songs(arr):
     return random.choices(choose_mood(arr), k=5)
 
-song1 = random_songs([4,2,3,3])[0]
-download_song(song1)
-print(song1.get_name())
-song1.get_image()
+def get_song():
+    song1 = random_songs([4,2,3,3])[0]
+    download_song(song1)
+    return song1
+
 # print(song1.get_image())
 
 

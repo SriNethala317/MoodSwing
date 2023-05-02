@@ -28,7 +28,7 @@ def download_audio(url, song):
     bestaudio = video.getbestaudio(preftype='m4a')
     extension = bestaudio.extension
     song.set_extension(extension)
-    filename = song_name + '.' + extension
+    filename = song_name.replace(" ", "_") + '.' + extension
     song.set_filename(filename)
     bestaudio.download(filepath= os.getcwd() + "\\" + SONGSFOLDER + "\\" + filename)
     

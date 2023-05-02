@@ -4,7 +4,7 @@ from typing import Any
 
 class Song:
     def __init__(self, name, artist="test", image_url="test", extension="test") -> None:
-        self.song_info ={"name" : name.replace(" ", "_"), "artist": artist.replace(" ", "_"), "image_url": image_url, "filename": name.replace(" ", "_") + "." + extension, "extension": extension, "played" : False, "length": 0}
+        self.song_info ={"name" : name, "artist": artist, "image_url": image_url, "filename": name.replace(" ", "_") + "." + extension, "extension": extension, "played" : False, "length": 0}
 
     def __str__(self) -> str:
         return str(self.song_info)

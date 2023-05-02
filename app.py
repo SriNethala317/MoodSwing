@@ -1,10 +1,11 @@
-
 from flask import Flask, redirect, render_template, session, url_for, request, send_from_directory, jsonify
 from pymongo import MongoClient
 from flask_pymongo import PyMongo
 from os import environ as env
+import os
 from dotenv import find_dotenv, load_dotenv
 import json
+from spotify_songs import *
 
 
 from spotify_songs import * 
@@ -36,8 +37,6 @@ def registrationProcess():
     users.insert_one({"username":username, "password":password})
     return json.dumps('/login')
     
-
-
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -48,18 +47,29 @@ def loginProcess():
     password = request.get_json()['pass']
     existing_details = users.find_one({"username": username, "password": password})
     if existing_details:
-        return json.dumps('/musicPlayer')
+        return json.dumps('/survey2')
     else:
         return json.dumps('/signup')
     
-@app.route('/song_downloads/<path:path>')
+@app.route('/songs/<path:path>')
 def send_song(path):
-    return send_from_directory('../song_downloads/', path)
+    return send_from_directory('./song_downloads/', path)
 
 @app.route('/music-player')
 def musicPlayer():
+    return render_template("music-player.html")
+
+@app.route('/getSong', methods=['POST'])
+def get_song_info():
+    check = request.get_json()['check']
+    song = get_song()
+    return jsonify(song.get_song_info())
+
+@app.route('/survey2')
+def survey2():
+    return render_template("survey2.html")
     
-    return render_template('music-player.html')
+
 
 
 

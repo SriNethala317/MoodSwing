@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-size: cover;
+        background-image: url("bg.png");
+      }
+      
+      .rectangle {
+        width: 100vw;
+        height: 75px;
+        background: #241F1F;
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+
+      .recText {
+        color: white;
+        position: absolute;
+        font-size: 30px;
+        top: 20px;
+        left: 20px;
+      }
+
+      .bottomRect {
+        width: 100vw;
+        height: 75px;
+        background: #241F1F;
+        position: relative; top: 515px;
+        color: white;
+      }
+
+      .survey-container {
+        width: 500px;
+        margin: 0 auto;
+        background-color: white;
+        border: 1px solid #ccc;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .question {
+        margin-bottom: 20px;
+      }
+
+      .question h2 {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 10px;
+      }
+
+      .answer {
+        margin-left: 20px;
+      }
+
+      .answer label {
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      .answer input[type="radio"] {
+        margin-right: 10px;
+      }
+
+      .submit-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      .question-container {
+        height: 400px;
+        overflow-y: scroll;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="rectangle"></div>
+      <div class="recText">Moodswing</div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="survey-container">
+        <form action="submit_survey.php" method="post">
+            <div class="question-container">
+                <h3>Mood Questions</h3>
+              <div class="question">
+                <h2>Which emoji describes you?</h2>
+                <div class="answer">
+                  <label><input type="radio" name="q1" value="1"> 😀</label>
+                  <label><input type="radio" name="q1" value="2"> 😡</label>
+                  <label><input type="radio" name="q1" value="3"> 🥺</label>
+                  <label><input type="radio" name="q1" value="4"> 😐</label>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h2>Where would you listen to your music?</h2>
+                <div class="answer">
+                  <label><input type="radio" name="q2" value="1"> Party</label>
+                  <label><input type="radio" name="q2" value="2"> With friends</label>
+                  <label><input type="radio" name="q2" value="3"> Alone</label>
+                  <label><input type="radio" name="q2" value="4"> Everywhere</label>
+                </div>
+              </div>
+              
+              <div class="question">
+                <h2>What is most important to you right now?</h2>
+                <div class="answer">
+                  <label><input type="radio" name="q3" value="1"> Family</label>
+                  <label><input type="radio" name="q3" value="2"> Friends</label>
+                  <label><input type="radio" name="q3" value="3"> Myself</label>
+                  <label><input type="radio" name="q3" value="4"> Love</label>
+                </div>
+              </div>
+
+              <div class="question">
+                <h2>What would you have as a snack right now?</h2>
+                <div class="answer">
+                  <label><input type="radio" name="q4" value="1"> Pizza</label>
+                  <label><input type="radio" name="q4" value="2"> Cheetos</label>
+                  <label><input type="radio" name="q4" value="3"> Ice Cream</label>
+                  <label><input type="radio" name="q4" value="4"> Nothing</label>
+                </div>
+              </div>
+              <br>
+        <input type="button" onclick="window.location.href='/music-player' "value="submit">
+
+              
+            </div>
+          </form>
+
+          
+    </div>
+    </body>
+    </html>
