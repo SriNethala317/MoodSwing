@@ -10,6 +10,9 @@ music_player_prev.addEventListener('click', previous);
 const music_player_repeat = document.querySelector('.music-player-repeat');
 music_player_repeat.addEventListener('click', repeat);
 
+const a = document.getElementById('audio');
+a.addEventListener('ended', forward);
+
 
 // const document_loaded = document.addEventListener('DOMContentLoaded', play);
 
